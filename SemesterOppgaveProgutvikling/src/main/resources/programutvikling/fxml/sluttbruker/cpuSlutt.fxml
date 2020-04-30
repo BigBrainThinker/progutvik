@@ -10,11 +10,16 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="483.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.sluttbruker.cpuControllerSlutt">
     <children>
         <TableView layoutY="64.0" prefHeight="416.0" prefWidth="498.0">
             <columns>
-                <TableColumn fx:id="CPUColumn" prefWidth="102.39999389648438" text="CPU" />
+                <TableColumn fx:id="CPUColumn" prefWidth="102.39999389648438" text="CPU" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="age" />
+                </cellValueFactory>
+                </TableColumn>
                 <TableColumn fx:id="coreColumn" prefWidth="119.99993896484375" text="Core" />
                 <TableColumn fx:id="clockSpeedColumn" prefWidth="77.60003662109375" text="Clockspeed" />
                 <TableColumn fx:id="RAMColumn" prefWidth="93.60003662109375" text="RAM" />

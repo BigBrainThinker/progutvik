@@ -11,15 +11,40 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="528.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.superbruker.cpuControllerSuper">
    <children>
       <TableView fx:id="tableView" layoutX="30.0" layoutY="67.0" prefHeight="330.0" prefWidth="438.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="CPU" />
-          <TableColumn prefWidth="118.0" text="Klokkehastighet" />
-            <TableColumn prefWidth="76.0" text="Cores" />
-            <TableColumn prefWidth="66.0" text="RAM" />
-            <TableColumn prefWidth="102.0" text="Pris" />
+          <TableColumn prefWidth="75.0" text="CPU">
+              <cellValueFactory>
+                  <PropertyValueFactory property="cpu" />
+              </cellValueFactory>>
+          </TableColumn>
+
+            <TableColumn prefWidth="118.0" text="Klokkehastighet">
+                <cellValueFactory>
+                    <PropertyValueFactory property="clockSpeed" />
+                </cellValueFactory>>
+            </TableColumn>
+
+            <TableColumn prefWidth="76.0" text="Cores">
+                <cellValueFactory>
+                    <PropertyValueFactory property="core" />
+                </cellValueFactory>>
+            </TableColumn>
+
+            <TableColumn prefWidth="66.0" text="RAM">
+                <cellValueFactory>
+                    <PropertyValueFactory property="RAM" />
+                </cellValueFactory>>
+            </TableColumn>
+
+            <TableColumn prefWidth="102.0" text="Pris">
+                <cellValueFactory>
+                    <PropertyValueFactory property="pris" />
+                </cellValueFactory>>
+            </TableColumn>
         </columns>
       </TableView>
       <Text layoutX="188.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alle CPU'er" wrappingWidth="186.13671875">
