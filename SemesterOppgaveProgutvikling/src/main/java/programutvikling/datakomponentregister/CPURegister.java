@@ -23,7 +23,7 @@ public class CPURegister implements Serializable {
         return pregister;
     }
 
-    public static void addCPU(CPU p) {
+    public void addCPU(CPU p) {
         pregister.add(p);
     }
 

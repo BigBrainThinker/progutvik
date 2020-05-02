@@ -13,7 +13,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="483.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.sluttbruker.cpuControllerSlutt">
     <children>
-        <TableView layoutY="64.0" prefHeight="416.0" prefWidth="498.0">
+        <TableView  fx:id="tableView" layoutY="64.0" prefHeight="416.0" prefWidth="498.0">
             <columns>
                 <TableColumn fx:id="CPUColumn" prefWidth="102.39999389648438" text="CPU" >
                 <cellValueFactory>

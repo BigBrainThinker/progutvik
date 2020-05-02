@@ -14,17 +14,18 @@ public class CPU implements Serializable {
 
 
     public CPU(String cpu, int core, int clockSpeed, int RAM, int pris){
-        if(!validator.clockSpeed(clockSpeed)){
-            throw new IllegalArgumentException("Ugyldig clockspeed, gi ny input");
+        if(!validator.cpu(cpu)){
+            throw new IllegalArgumentException("Ugyldig cpu, gi ny input");
         }
 
         if(!validator.pris(core)){
             throw new IllegalArgumentException("Udylig core, gi ny input");
         }
 
-        if(!validator.cpu(cpu)){
-            throw new IllegalArgumentException("Ugyldig cpu, gi ny input");
+        if(!validator.pris(clockSpeed)){
+            throw new IllegalArgumentException("Ugyldig clockspeed, gi ny input");
         }
+
         if(!validator.pris(RAM)){
             throw new IllegalArgumentException("Ugydlig RAM, gi ny input");
         }
@@ -49,7 +50,7 @@ public class CPU implements Serializable {
             throw new IllegalArgumentException("Cpu kan ikke være tom");
         }
     }
-    public int getcore(){
+    public int getCore(){
         return core.getValue();
     }
 
@@ -92,7 +93,7 @@ public class CPU implements Serializable {
     @Override
     public String toString() {
         return String.format("%s;%s;%s;%s;%s",
-                cpu.getValue(), RAM.getValue(), pris.toString(),
+                cpu.getValue(), RAM.getValue(), pris.getValue(),
                 core.getValue(), clockSpeed.getValue());
     }
 }

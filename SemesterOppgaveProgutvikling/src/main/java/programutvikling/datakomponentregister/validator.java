@@ -3,7 +3,7 @@ package programutvikling.datakomponentregister;
 public class validator {
 
     static boolean cpu(String cpu){
-        return !cpu.isBlank()&&cpu.matches("^[a-zA-Z0-9]");
+        return !cpu.isBlank() && cpu.matches("[^\\d]+");
     }
 
     static boolean core(String core){

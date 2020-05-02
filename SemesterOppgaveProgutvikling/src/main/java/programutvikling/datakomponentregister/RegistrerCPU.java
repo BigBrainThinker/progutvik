@@ -2,6 +2,7 @@ package programutvikling.datakomponentregister;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import programutvikling.HelpClass.Dialogs;
 
 public class RegistrerCPU {
 
@@ -15,15 +16,18 @@ public class RegistrerCPU {
         try {
             CPU p = createCPU();
             resetFields();
+            Dialogs.showSuccessDialog(p.getCpu());
             return p;
         } catch (NumberFormatException nfe) {
+            Dialogs.showErrorDialog("Tast inn heltall for alder og fødselsdato");
         } catch (IllegalArgumentException iae) {
+            Dialogs.showErrorDialog(iae.getMessage());
         }
         return null;
     }
 
     private CPU createCPU() {
-        String CPU = getString((TextField) guiData.lookup("#CPU"));
+        String CPU = getString((TextField) guiData.lookup("#txtCPU"));
         int Klokkehastighet = getInt((TextField) guiData.lookup("#txtKlokkehastighet"));
         int Kjerner = getInt((TextField) guiData.lookup("#txtKjerner"));
         int RAM = getInt((TextField) guiData.lookup("#txtRAM"));

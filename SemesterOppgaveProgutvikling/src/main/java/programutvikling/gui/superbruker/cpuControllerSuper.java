@@ -5,33 +5,40 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
-
+import javafx.stage.Stage;
+import programutvikling.HelpClass.FileHandler;
 import programutvikling.datakomponentregister.*;
 
 public class cpuControllerSuper {
 
-    public GridPane registrationBox;
-    public TableView tableView;
-
-    private RegistrerCPU registerCPU;
-    private CPURegister cpuRegister = new CPURegister();
+    @FXML
+    TextField txtCPU;
+    @FXML
+    GridPane registrationBox;
 
     @FXML
-    private TextField txtCPU;
+    TableView<CPU> tableView;
+
+    RegistrerCPU registerCPU;
+    CPURegister cpuRegister = new CPURegister();
 
     @FXML
-    private TextField txtKlokkehastighet;
+    TextField txtKlokkehastighet;
 
     @FXML
-    private TextField txtKjerner;
+    TextField txtKjerner;
 
     @FXML
-    private TextField txtRAM;
+    TextField txtRAM;
 
     @FXML
-    private TextField txtPris;
+    TextField txtPris;
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     @FXML
     public void initialize() {
@@ -40,20 +47,26 @@ public class cpuControllerSuper {
     }
 
     private void updateCPUList() {
-        CPURegister.attachTableView(tableView);
+        cpuRegister.attachTableView(tableView);
     }
 
     @FXML
-    void RegistrerCPU(ActionEvent event) {
+    private void RegistrerCPU(ActionEvent event) {
         CPU newCPU = registerCPU.createCPUfromGUIandResetFields();
         if(newCPU != null) {
-            CPURegister.addCPU(newCPU);
+            cpuRegister.addCPU(newCPU);
         }
     }
 
-    @FXML
-    void SlettCPU(ActionEvent event) {
-
+    public void slettCpu(ActionEvent actionEvent) {
     }
 
+    public void openFileMenuClicked(ActionEvent actionEvent) {
+        FileHandler.openFile(stage, cpuRegister);
+        updateCPUList();
+    }
+
+    public void saveFileMenuClicked(ActionEvent actionEvent) {
+        FileHandler.saveFileCPUArray(stage, cpuRegister);
+    }
 }
