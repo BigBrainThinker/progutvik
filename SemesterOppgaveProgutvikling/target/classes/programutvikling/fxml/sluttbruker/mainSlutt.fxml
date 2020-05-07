@@ -52,5 +52,6 @@
             <Image url="@../../Pictures/psu.png" />
          </image>
       </ImageView>
+      <Button layoutX="585.0" layoutY="14.0" mnemonicParsing="false" onAction="#tilbakeTilInnlogging" prefHeight="26.0" prefWidth="130.0" text="Tilbake til innlogging" />
    </children>
 </AnchorPane>

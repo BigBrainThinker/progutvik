@@ -2,20 +2,16 @@ package programutvikling.datakomponentregister;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import programutvikling.HelpClass.Dialogs;
+import javafx.scene.control.TextField;
 
 public class RegistrerCPU {
 
-    private GridPane guiData;
-
-    public RegistrerCPU(GridPane guiData) {
-        this.guiData = guiData;
-    }
-
-    public CPU createCPUfromGUIandResetFields() {
+    public CPU createCPUfromGUIandResetFields(String CPU, String klokkehastighet, String kjerner, String ram, String pris) {
         try {
-            CPU p = createCPU();
-            resetFields();
+            CPU p = createCPU(CPU, klokkehastighet,  kjerner, ram , pris);
+            //resetFields(CPU, klokkehastighet,  kjerner, ram , pris);
             Dialogs.showSuccessDialog(p.getCpu());
             return p;
         } catch (NumberFormatException nfe) {
@@ -26,17 +22,18 @@ public class RegistrerCPU {
         return null;
     }
 
-    private CPU createCPU() {
-        String CPU = getString((TextField) guiData.lookup("#txtCPU"));
-        int Klokkehastighet = getInt((TextField) guiData.lookup("#txtKlokkehastighet"));
-        int Kjerner = getInt((TextField) guiData.lookup("#txtKjerner"));
-        int RAM = getInt((TextField) guiData.lookup("#txtRAM"));
-        int pris = getInt((TextField) guiData.lookup("#txtPris"));
+    private CPU createCPU(String cpuname, String klokkehastighet, String kjerner, String ram, String prisa) {
+        String CPU = cpuname;
+        int Klokkehastighet = Integer.parseInt(klokkehastighet);
+        int Kjerner = Integer.parseInt(kjerner);
+        int RAM = Integer.parseInt(ram);
+        int pris = Integer.parseInt(prisa);
 
         return new CPU(CPU, Klokkehastighet, Kjerner, RAM, pris);
     }
 
     private String getString(TextField field) {
+        System.out.println(field.getText());
         return field.getText();
     }
 
@@ -44,12 +41,12 @@ public class RegistrerCPU {
         return Integer.parseInt(getString(field));
     }
 
-    private void resetFields() {
-        ((TextField) guiData.lookup("#txtCPU")).setText("");
-        ((TextField) guiData.lookup("#txtKlokkehastighet")).setText("");
-        ((TextField) guiData.lookup("#txtKjerner")).setText("");
-        ((TextField) guiData.lookup("#txtRAM")).setText("");
-        ((TextField) guiData.lookup("#txtPris")).setText("");
+    private void resetFields(TextField CPU, TextField klokkehastighet, TextField kjerner, TextField ram, TextField pris) {
+        CPU.setText("");
+        klokkehastighet.setText("");
+        kjerner.setText("");
+        ram.setText("");
+        pris.setText("");
     }
 
 }

@@ -1,4 +1,4 @@
-package programutvikling.gui.sluttbruker;
+package programutvikling.gui.superbruker;
 
 
 import javafx.event.ActionEvent;
@@ -15,12 +15,12 @@ import java.util.Objects;
 
 import static utilities.Constants.*;
 
-public class MainControllerSlutt {
+public class MainControllerSuper {
     private Stage stage;
 
     @FXML
     private void Find_CPU(ActionEvent event) {
-        changePage.changePage(FXML_PATH_SLUTTBRUKER + "/cpuSlutt.fxml", event);
+        changePage.changePage(FXML_PATH_SUPERBRUKER + "/cpuSuper.fxml", event);
     }
 
     public void setStage(Stage stage) {
@@ -28,6 +28,6 @@ public class MainControllerSlutt {
     }
 
     public void tilbakeTilInnlogging(ActionEvent event) {
-        changePage.changePage(FXML_PATH_HOME + "/main.fxml", event);
+        changePage.changePage(FXML_PATH_HOME+ "/main.fxml", event);
     }
 }

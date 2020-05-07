@@ -3,12 +3,18 @@ package programutvikling.gui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import programutvikling.HelpClass.changePage;
 
-import static utilities.Constants.FXML_PATH_SLUTTBRUKER;
-import static utilities.Constants.FXML_PATH_SUPERBRUKER;
+import java.io.IOException;
+
+import static utilities.Constants.*;
 
 public class MainController {
     public Button sluttBruker;
@@ -20,12 +26,14 @@ public class MainController {
     }
 
     @FXML
-    void LoggInnSuperBruker(ActionEvent event) {
-        changePage.changePage(FXML_PATH_SUPERBRUKER + "/cpuSuper.fxml", event);
+    void LoggInnSuperBruker(ActionEvent event) throws IOException {
 
+        changePage.changePage(FXML_PATH_HOME + "/loggInnSuper.fxml", event);
+        // changePage.newWindow(event,FXML_PATH_HOME + "/loggInnSuper.fxml");    Fiks senere
     }
 
     public void setStage(Stage stage) {
+
         this.stage = stage;
     }
 

@@ -1,0 +1,77 @@
+*{
+    -fx-primary : #2A2E37;
+    -fx-secondary: #FFFF8D;
+    -fx-blue:#1976D2;
+    -fx-red:#FF0000;
+    -fx-color-1:#008B8B;
+    -fx-color-2: #2F4F4F;
+}
+
+.root{
+    -fx-background-color: #bcaaa4;
+
+}
+
+.button{
+    -fx-text-fill: white;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
+.button:hover{
+    -fx-border-color: blue;
+    -fx-background-color: #2F4F4F;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#overSkrift.label{
+    -fx-font-weight: 700;
+    -fx-letter-spacing: .01em;
+    -fx-padding: 10,4.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-text-fill: black;
+
+}
+
+#adminKonfigText{
+    -fx-text-alignment: center;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: .01em;
+    -fx-padding: 10,4.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-text-fill: black;
+
+
+}
+
+#vBoxCpu{
+    -fx-text-color: white;
+    -fx-text-alignment: center;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: .01em;
+    -fx-padding: 10,4.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-text-fill: white;
+}
+
+
+.label{
+    -fx-text-color: black;
+    -fx-text-alignment: center;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: .01em;
+    -fx-padding: 10,4.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-text-fill: black;
+}
+
+.text-field:hover{
+    -fx-text-color:blue;
+}
+
+
+

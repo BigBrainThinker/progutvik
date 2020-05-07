@@ -80,4 +80,5 @@ public class cpuControllerSlutt {
         changePage.changePage(FXML_PATH_SLUTTBRUKER + "/mainSlutt.fxml", event);
     }
 
+
 }

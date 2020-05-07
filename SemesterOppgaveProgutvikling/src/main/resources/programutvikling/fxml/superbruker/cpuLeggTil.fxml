@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="vBoxCpu" prefHeight="477.0" prefWidth="423.0" stylesheets="@../Styling.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.superbruker.cpuLeggTilController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="11.0" prefWidth="402.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="49.0" text="CPU">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="394.0">
+         <children>
+            <TextField fx:id="txtCPU" prefHeight="30.0" prefWidth="266.0" promptText="navn">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="394.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="78.0" text="Kjerner">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="394.0">
+         <children>
+            <TextField fx:id="txtKjerner" prefHeight="30.0" prefWidth="266.0" promptText="antall">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="394.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="59.0" text="RAM">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="427.0">
+         <children>
+            <TextField fx:id="txtRAM" prefHeight="30.0" prefWidth="266.0" promptText="i bytes">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="394.0">
+         <children>
+            <Label text="Klokkehastighet">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="427.0">
+         <children>
+            <TextField fx:id="txtKlokkehastighet" prefHeight="30.0" prefWidth="266.0" promptText="målt i GHz">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="30.0" prefWidth="414.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="394.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="46.0" text="Pris">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="414.0">
+         <children>
+            <TextField fx:id="txtPris" prefHeight="30.0" prefWidth="266.0" promptText="i kroner">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="402.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#AddCPU" prefHeight="43.0" prefWidth="210.0" text="Legg til CPU">
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#Avbryt" prefHeight="43.0" prefWidth="210.0" text="Avbryt">
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
