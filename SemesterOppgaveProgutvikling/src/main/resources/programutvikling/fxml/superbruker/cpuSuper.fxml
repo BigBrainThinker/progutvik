@@ -13,7 +13,7 @@
     <children>
         <TableView fx:id="tableView" layoutX="30.0" layoutY="67.0" prefHeight="330.0" prefWidth="438.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="CPU">
+                <TableColumn prefWidth="75.0" onEditCommit="#cpuEdited" text="CPU">
                     <cellValueFactory>
                         <PropertyValueFactory property="Cpu" />
                     </cellValueFactory>
@@ -21,7 +21,7 @@
                     </cellFactory>
                 </TableColumn>
 
-                <TableColumn prefWidth="118.0" text="Klokkehastighet">
+                <TableColumn prefWidth="118.0" onEditCommit="#klokkehastighetEdited" text="Klokkehastighet">
                     <cellValueFactory>
                         <PropertyValueFactory property="ClockSpeed" />
                     </cellValueFactory>
@@ -30,7 +30,7 @@
                 </TableColumn>
 
 
-                <TableColumn prefWidth="76.0" text="Cores">
+                <TableColumn prefWidth="76.0" onEditCommit="#coreEdited" text="Cores">
                     <cellValueFactory>
                         <PropertyValueFactory property="core" />
                     </cellValueFactory>
@@ -39,8 +39,7 @@
 
         </TableColumn>
 
-
-<TableColumn prefWidth="66.0" text="RAM">
+        <TableColumn prefWidth="66.0" text="RAM">
 <cellValueFactory>
     <PropertyValueFactory property="Ram" />
 </cellValueFactory>

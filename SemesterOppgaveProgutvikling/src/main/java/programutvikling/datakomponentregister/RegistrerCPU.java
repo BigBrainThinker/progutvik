@@ -8,32 +8,31 @@ import javafx.scene.control.TextField;
 
 public class RegistrerCPU {
 
-    public CPU createCPUfromGUIandResetFields(String CPU, String klokkehastighet, String kjerner, String ram, String pris) {
+    public CPU createCPUfromGUIandResetFields(TextField CPU, TextField klokkehastighet, TextField kjerner, TextField ram, TextField pris) {
         try {
             CPU p = createCPU(CPU, klokkehastighet,  kjerner, ram , pris);
-            //resetFields(CPU, klokkehastighet,  kjerner, ram , pris);
+            resetFields(CPU, klokkehastighet,  kjerner, ram , pris);
             Dialogs.showSuccessDialog(p.getCpu());
             return p;
         } catch (NumberFormatException nfe) {
-            Dialogs.showErrorDialog("Tast inn heltall for alder og fødselsdato");
+            Dialogs.showErrorDialog("Tast inn gyldig data");
         } catch (IllegalArgumentException iae) {
             Dialogs.showErrorDialog(iae.getMessage());
         }
         return null;
     }
 
-    private CPU createCPU(String cpuname, String klokkehastighet, String kjerner, String ram, String prisa) {
-        String CPU = cpuname;
-        int Klokkehastighet = Integer.parseInt(klokkehastighet);
-        int Kjerner = Integer.parseInt(kjerner);
-        int RAM = Integer.parseInt(ram);
-        int pris = Integer.parseInt(prisa);
+    private CPU createCPU(TextField cpuname, TextField klokkehastighet, TextField kjerner, TextField ram, TextField prisa) {
+        String CPU = getString(cpuname);
+        int Klokkehastighet = getInt(klokkehastighet);
+        int Kjerner = getInt(kjerner);
+        int RAM = getInt(ram);
+        int pris = getInt(prisa);
 
         return new CPU(CPU, Klokkehastighet, Kjerner, RAM, pris);
     }
 
     private String getString(TextField field) {
-        System.out.println(field.getText());
         return field.getText();
     }
 

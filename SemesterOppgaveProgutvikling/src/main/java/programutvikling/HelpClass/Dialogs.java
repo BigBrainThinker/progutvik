@@ -15,7 +15,7 @@ public class Dialogs {
 
     public static void showSuccessDialog(String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Personregister");
+        alert.setTitle("Datakomponent register");
         alert.setHeaderText("Operasjon vellykket");
         alert.setContentText(msg);
 

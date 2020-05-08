@@ -12,13 +12,15 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static utilities.Constants.CPU_LISTE;
+
 public class FileHandler {
     private enum DialogMode {Open, Save}
 
     //fjern stage unødvndig
     public static void saveFileCPUArray(Stage stage, CPURegister register){
         try {
-            FileWriter myWriter = new FileWriter("C:\\Users\\henry\\SemesterOppgaveProgutvikling\\src\\main\\resources\\programutvikling\\komponentRegister\\cpuGlobalArray.txt");
+            FileWriter myWriter = new FileWriter(CPU_LISTE);
             myWriter.write(register.toString());
             myWriter.close();
             Dialogs.showSuccessDialog("Registeret ble lagret!");
@@ -50,13 +52,6 @@ public class FileHandler {
                 }
             }
         }
-
-    }
-
-    public static void openFileCPUArray(Stage stage, CPURegister register) {
-        Path path = Paths.get("cpuGlobalArray.txt");
-
-
     }
 
     public static void openFile(Stage stage, CPURegister register) {

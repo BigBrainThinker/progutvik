@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import programutvikling.datakomponentregister.CPU;
@@ -17,8 +18,6 @@ import java.net.URL;
 import static utilities.Constants.FXML_PATH_HOME;
 
 public class changePage {
-    private static CPU newCPU;
-    private static  RegistrerCPU registerCPU;
 
     public static void changePage(String path, ActionEvent event){
         try {
@@ -61,8 +60,7 @@ public class changePage {
         stage.close();
     }
 
-
-    public static CPU addCpuFrom(String path, ActionEvent event) {
+    public static void LoginWindow(String path, ActionEvent event, Button button) {
         try {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(
@@ -73,11 +71,12 @@ public class changePage {
             stage.initOwner(
                     ((Node) event.getSource()).getScene().getWindow());
             stage.showAndWait();
+            stage.setScene(button.getScene());
+            stage.close();
         }
         catch (IOException io){
             io.printStackTrace();
         }
-        return newCPU;
     }
 
 }

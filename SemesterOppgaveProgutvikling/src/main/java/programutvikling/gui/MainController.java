@@ -29,7 +29,8 @@ public class MainController {
     void LoggInnSuperBruker(ActionEvent event) throws IOException {
 
         changePage.changePage(FXML_PATH_HOME + "/loggInnSuper.fxml", event);
-        // changePage.newWindow(event,FXML_PATH_HOME + "/loggInnSuper.fxml");    Fiks senere
+        //changePage.newWindow(FXML_PATH_HOME + "/loggInnSuper.fxml", event); fiks senere
+
     }
 
     public void setStage(Stage stage) {

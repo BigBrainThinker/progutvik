@@ -24,15 +24,14 @@ public class cpuLeggTilController {
     @FXML
     private TextField txtPris;
 
-    RegistrerCPU registerCPU;
+    RegistrerCPU registerCPU = new RegistrerCPU();
 
     public CPU newCPU;
 
     @FXML
-    CPU AddCPU(ActionEvent event) {
-        System.out.println(txtCPU.getText());
-        newCPU = registerCPU.createCPUfromGUIandResetFields(txtCPU.getText(), txtKlokkehastighet.getText(), txtKjerner.getText(), txtRAM.getText(), txtPris.getText());
-        return newCPU;
+    void AddCPU(ActionEvent event) {
+        newCPU = registerCPU.createCPUfromGUIandResetFields(txtCPU, txtKlokkehastighet, txtKjerner, txtRAM, txtPris);
+        cpuControllerSuper.cpuRegister.addCPU(newCPU);
     }
 
     @FXML

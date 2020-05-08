@@ -24,7 +24,7 @@ public class LoginControllerSuper {
 
     @FXML
     void CancelLogin(ActionEvent event) {
-        changePage.closeNewWindow(event);
+        changePage.changePage(FXML_PATH_HOME+ "/main.fxml", event);
     }
 
     @FXML
@@ -34,6 +34,7 @@ public class LoginControllerSuper {
 
         if(txtUsername.getText().equals(username) && txtPassword.getText().equals(password)) {
             changePage.changePage(FXML_PATH_SUPERBRUKER + "/mainSuperBruker.fxml", event);
+
         } else {
             Dialogs.showErrorDialog("Feil brukernavn eller password");
         }

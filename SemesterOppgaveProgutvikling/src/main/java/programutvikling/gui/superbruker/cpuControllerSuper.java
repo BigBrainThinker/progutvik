@@ -16,38 +16,18 @@ import static utilities.Constants.*;
 
 public class cpuControllerSuper {
 
-
-    @FXML
-    TextField txtCPU;
-    @FXML
-    GridPane registrationBox;
-
     @FXML
     TableView<CPU> tableView;
 
-    RegistrerCPU registerCPU;
-    CPURegister cpuRegister = new CPURegister();
+    static CPURegister cpuRegister = new CPURegister();
 
-    @FXML
-    TextField txtKlokkehastighet;
-
-    @FXML
-    TextField txtKjerner;
-
-    @FXML
-    TextField txtRAM;
-
-    @FXML
-    TextField txtPris;
     private Stage stage;
-
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     @FXML
     public void initialize() {
-        // registerCPU = new RegistrerCPU(registrationBox);
         updateCPUList();
     }
 
@@ -57,24 +37,11 @@ public class cpuControllerSuper {
 
     @FXML
     private void RegistrerCPU(ActionEvent event){
-        CPU newCPU = changePage.addCpuFrom(FXML_PATH_SUPERBRUKER + "/cpuLeggTil.fxml", event);
-        if (newCPU != null) {
-            cpuRegister.addCPU(newCPU);
-            changePage.closeNewWindow(event);
-        }
+        changePage.newWindow(FXML_PATH_SUPERBRUKER + "/cpuLeggTil.fxml", event);
     }
-
-   /* @FXML
-    private void RegistrerCPU(ActionEvent event) {
-        CPU newCPU = registerCPU.createCPUfromGUIandResetFields();
-        if(newCPU != null) {
-            cpuRegister.addCPU(newCPU);
-        }
-    }
-    */
-
 
     public void slettCpu(ActionEvent actionEvent) {
+        tableView.getItems().removeAll(tableView.getSelectionModel().getSelectedItems());
     }
 
     public void openFileMenuClicked(ActionEvent actionEvent) {
@@ -83,10 +50,8 @@ public class cpuControllerSuper {
     }
 
     public void saveFileMenuClicked(ActionEvent actionEvent) {
-        FileHandler.saveFileCPUArray(stage, cpuRegister);
+        FileHandler.saveFile(stage, cpuRegister);
     }
-
-
 
     public void tilbakeTilInnlogging(ActionEvent event) {
         changePage.changePage(FXML_PATH_HOME + "/main.fxml", event);

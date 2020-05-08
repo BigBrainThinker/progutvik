@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="509.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.sluttbruker.MainControllerSlutt">
+<AnchorPane prefHeight="509.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/11.0.1" stylesheets="@../Styling.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programutvikling.gui.sluttbruker.MainControllerSlutt">
    <children>
       <Text layoutX="177.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="computer compoments" wrappingWidth="321.26953125">
          <font>
